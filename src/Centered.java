@@ -1,4 +1,9 @@
 
+/*
+ * Author: Kevin Fitzgerald
+ * This class implements a TextBlock and centers it in the middle of the input space or truncates the 
+ * TextBlock to fit in the desired length. if centered width is uneven, the extra space is put in the front
+ */
 public class Centered implements TextBlock {
 
   //Field
@@ -16,10 +21,14 @@ this.width = width;
   //methods
   public String row(int i) throws Exception {
     int w = this.block.width();
-    if (w > this.width){
-
-    return this.block.row(i).substring(0,this.width);
-
+    int spacer = this.width() - w;
+    if (w < this.width){
+      if( (spacer % 2) == 0){
+        return TBUtils.spaces(spacer / 2) + this.block.row(i) + TBUtils.spaces(spacer / 2);
+        }// if even
+      else{
+        return TBUtils.spaces((spacer / 2) + 1) + this.block.row(i) + TBUtils.spaces(spacer / 2);
+      }//if odd, extra space in front of block
     }// if block fits in width
 
     else{
@@ -27,7 +36,7 @@ this.width = width;
       return newblock.row(i);
           
     }// if block does not fit in width
-  }
+  }// row int (i)
 
     public int height() {
       return this.block.height();

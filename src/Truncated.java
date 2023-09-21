@@ -1,4 +1,8 @@
 
+/*
+ * Author: Kevin Fitzgerald
+ * This class implements TextBlock and removes all characters past the given width for all rows
+ */
 public class Truncated implements TextBlock {
 
   //Field
