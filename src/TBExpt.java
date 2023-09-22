@@ -17,8 +17,9 @@ public class TBExpt {
     TextBlock bigboy = new Truncated(new VComposition(block, new BoxedBlock(block)), 12);
     //TBUtils.print(pen, bigboy);
     //TBUtils.print(pen, new Centered(bigboy, 6));
-    TBUtils.print(pen, new RightJustified(bigboy, 15));
-    pen.close();
+    //TBUtils.print(pen, new RightJustified(bigboy, 15));
+    //TBUtils.print(pen, new HorizontallyFlipped(bigboy));
+    //TBUtils.print(pen, new VerticallyFlipped(new VComposition( block, bigboy)));
   } // main(String[])
 
 } // class TBExpt
