@@ -19,7 +19,19 @@ this.width = width;
   }
 
   //methods
-  public String row(int i) throws Exception {
+  /**
+   * Get one row from the block.
+   * 
+   * @pre 0 <= i < this.height()
+   * @exception Exception if the precondition is not met
+   */
+
+  public String row(int i) throws Exception { 
+    
+    if (i > this.height()) {
+    throw new Exception("Invalid row " + i);
+} // if the row is invalid
+
     int w = this.block.width();
     int spacer = this.width() - w;
     if (w < this.width){
@@ -46,6 +58,13 @@ this.width = width;
       return this.width;
     } // height()
 
+ // Useless Methods - for testing ease
+public static String firstline(Centered line) throws Exception{
+  return line.row(0);
+}
 
+public static String lastline(Centered line) throws Exception{
+  return line.row(line.height() - 1);
+}
 
-}//Truncated
+}//Centered

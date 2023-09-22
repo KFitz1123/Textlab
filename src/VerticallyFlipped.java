@@ -18,8 +18,19 @@ this.block = block;
   }
 
   //methods
+  /**
+   * Get one row from the block.
+   * 
+   * @pre 0 <= i < this.height()
+   * @exception Exception if the precondition is not met
+   */
+
   public String row(int i) throws Exception {
 
+    if (i > this.height()) {
+      throw new Exception("Invalid row " + i);
+  } // if the row is invalid
+  
     return this.block.row(this.block.height() - i - 1);
   }//row(int i)
 
@@ -31,6 +42,15 @@ this.block = block;
       return this.block.width();
     } // height()
   
+     // Useless Methods - for testing ease
+public static String firstline(VerticallyFlipped line) throws Exception{
+  return line.row(0);
+}
+
+public static String lastline(VerticallyFlipped line) throws Exception{
+  return line.row(line.height() - 1);
+}
+
 }//VerticallyFlipped
 
 

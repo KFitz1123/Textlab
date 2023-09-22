@@ -28,5 +28,14 @@ public interface TextBlock {
    */
   public int width();
 
+
+    // Useless Methods - for testing ease
+    public static String firstline(TextBlock line) throws Exception{
+      return line.row(0);
+    }
+    
+    public static String lastline(TextBlock line) throws Exception{
+      return line.row(line.height() - 1);
+    }
 } // interface TextBlock
 

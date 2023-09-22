@@ -66,5 +66,29 @@ public class TBUtils {
     // Extract an appropriate length substring
     return lotsOfSpaces.substring(0, len);
   } // spaces(int)
-  
+
+  public static  boolean equal(TextBlock t1, TextBlock t2) throws Exception {
+    boolean check = true;
+    if (t1.height() != t2.height()){
+      return false;
+    }
+    else{
+for (int j = 0; j < t1.height(); j++){
+
+  check = (check == t1.row(j).equals(t2.row(j)));
+}
+    }
+return check;
+  }
+
+  public static boolean eqv(TextBlock t1, TextBlock t2){
+    
+
+    return true;
+  }
+
+  public static boolean eq(TextBlock t1, TextBlock t2){
+    return t1 == t2;
+  }
+
 } // class TBUtils
