@@ -3,7 +3,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 
-public class TextBoxTests {
+public class TextBlockTests {
   /*
    * Author: Kevin Fitzgerald
    * 
